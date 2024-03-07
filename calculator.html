@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <script>
+            function clearDisplay() {
+                 document.getElementById('display').value = '';
+            }
+            function removeLast(){
+                document.getElementById('display').value= document.getElementById('display').value.slice(0,-1) ;
+                
+
+            }
+            function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+            }
+
+        function clearDisplay() {
+        document.getElementById('display').value = '';
+        }
+
+        function calculateResult() {
+            //alert(Function(`return ${document.getElementById('display').value}`)());
+            try {
+                document.getElementById('display').value = eval(document.getElementById('display').value);
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+            }
+
+
+        </script>
+        <style>
+            .display{
+                width:409px;
+                height:100px;
+
+            }
+            body{
+                margin-top:10%;
+                margin-left:35%;
+                width:415px;
+
+            }
+            .outer{
+                display:grid;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-template-rows:100px 100px 100px 100px 100px ;
+                column-gap:5px;
+                row-gap:5px;
+                background-color: gray;
+
+            }
+            .button{
+                width:100px;
+                height:100px;
+            }
+            .eq{
+                background-color: maroon;
+            }
+            .button1{
+                width:100px;
+                height:100px;
+                background-color: maroon;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" class="display" id="display" disabled>
+
+        <div class="outer">
+        <div style="background-color:blue"> 
+            <button class="button" onclick="clearDisplay()">^</button>
+        </div>
+        <div class="eq"> 
+            <button class="button" onclick="clearDisplay()">C</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="removeLast()"><]</button>
+        </div>
+        <div style="background-color:maroon"> 
+            <button class="button1" onclick="clearDisplay()"CE</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('7')">7</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('8')">8</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('9')">9</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('/')">/</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('4')">4</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('5')">5</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('6')">6</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('*')">*</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('1')">1</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('2')">2</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('3')">3</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('-')">NEG</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('0')">0</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="appendToDisplay('.')">.</button>
+        </div>
+        <div style="background-color:blue"> 
+            <button class="button" onclick="calculateResult()">=</button>
+        </div>
+        
+    </div>
+       
+        
+    </body>    
+</html>
